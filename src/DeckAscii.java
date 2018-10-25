@@ -6,59 +6,59 @@ public class DeckAscii {
 
 
 	public static void main(String[] args) { 
-		int[] value = {11, 5, 3, 7, 0};
-		int[] color = {1, 3, 0, 2, 1};
+		int[] value = {11, 5, 3, 7, 14};
+		String[] color = {"Hearts", "Hearts", "Hearts", "Diamonds", "Diamonds"};
+
 
 
 		printHand(value, color);
 
 	}
 
+	public static void printHand(int[] value, String[] color) {
 
-	public static void printHand(int[] value, int[] color) {
-		
 		String rank[] = new String[value.length];
 		char suit[] = new char[color.length];
 
 		for (int c = 0; c < value.length; c++) {
 			switch (value[c]) {
-			case 0: // ace
+			case 14: // ace
 				rank[c] = " A";
 				break;
-			case 1: // two
+			case 2: // two
 				rank[c] = " 2";
 				break;
-			case 2: // three
+			case 3: // three
 				rank[c] = " 3";
 				break;
-			case 3: // four
+			case 4: // four
 				rank[c] = " 4";
 				break;
-			case 4: // five
+			case 5: // five
 				rank[c] = " 5";
 				break;
-			case 5: // six
+			case 6: // six
 				rank[c] = " 6";
 				break;
-			case 6: // seven
+			case 7: // seven
 				rank[c] = " 7";
 				break;
-			case 7: // eight
+			case 8: // eight
 				rank[c] = " 8";
 				break;
-			case 8: // nine
+			case 9: // nine
 				rank[c] = " 9";
 				break;
-			case 9: // ten
+			case 10: // ten
 				rank[c] = "10";
 				break;
-			case 10: // jack
+			case 11: // jack
 				rank[c] = " J";
 				break;
-			case 11: // queen
+			case 12: // queen
 				rank[c] = " Q";
 				break;
-			case 12: // king
+			case 13: // king
 				rank[c] = " K";
 				break;
 			default:
@@ -68,35 +68,38 @@ public class DeckAscii {
 
 		for (int c = 0; c < color.length; c++) {
 			switch (color[c]) {
-			case 0:
-				suit[c] = SPADES;
-				break;
-			case 1:
+			case "Hearts":
 				suit[c] = HEARTS;
 				break;
-			case 2:
+			case "Spades":
+				suit[c] = SPADES;
+				break;
+			case "Diamonds":
 				suit[c] = DIAMONDS;
 				break;
-			case 3:
+			case "Clubs":
 				suit[c] = CLUBS;
 				break;
 			default:
 				break;
 			}
 		}
-		
+
+
 		if (value.length > 2 && color.length > 2) {
 
-				System.out.println("Table:");
+			System.out.println("Table:");
 
-			//			Top of card
+			// Top of card
+
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
 
-			//			Middle of card
+			// Middle of card
+
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -108,13 +111,13 @@ public class DeckAscii {
 				}
 				System.out.println("· ·│");
 			}
-			for (int i = 2; i < rank.length-1; i++) {
+			for (int i = 2; i < rank.length - 1; i++) {
 				System.out.print("│ · · ");
 			}
-			System.out.println("│ · ·" + rank[rank.length-1] + " " + suit[suit.length-1] + "│");
+			System.out.println("│ · ·" + rank[rank.length - 1] + " " + suit[suit.length - 1] + "│");
 
+			// Bottom of card
 
-			//			Bottom of card
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("└─────");
 			}
@@ -122,15 +125,15 @@ public class DeckAscii {
 
 			System.out.println("Hand:");
 
+			// Top of card
 
-			//			Top of card
 			for (int i = 0; i < 2; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
+			// Middle of card
 
-			//			Middle of card
 			for (int i = 0; i < 2; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -142,31 +145,31 @@ public class DeckAscii {
 				}
 				System.out.println("· ·│");
 			}
-			for (int i = 0; i < 2-1; i++) {
+			for (int i = 0; i < 2 - 1; i++) {
 				System.out.print("│ · · ");
 			}
-			System.out.println("│ · ·" + rank[2-1] + " " + suit[2-1] + "│");
+			System.out.println("│ · ·" + rank[2 - 1] + " " + suit[2 - 1] + "│");
 
+			// Bottom of card
 
-			//			Bottom of card
 			for (int i = 0; i < 2; i++) {
 				System.out.print("└─────");
 			}
 			System.out.println("───┘");
 
-
 		} else {
 
-				System.out.println("Hand:");
+			System.out.println("Hand:");
 
-			//		Top of card
+			// Top of card
+
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
+			// Middle of card
 
-			//		Middle of card
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -178,13 +181,13 @@ public class DeckAscii {
 				}
 				System.out.println("· ·│");
 			}
-			for (int i = 0; i < rank.length-1; i++) {
+			for (int i = 0; i < rank.length - 1; i++) {
 				System.out.print("│ · · ");
 			}
-			System.out.println("│ · ·" + rank[rank.length-1] + " " + suit[suit.length-1] + "│");
+			System.out.println("│ · ·" + rank[rank.length - 1] + " " + suit[suit.length - 1] + "│");
 
+			// Bottom of card
 
-			//		Bottom of card
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("└─────");
 			}
