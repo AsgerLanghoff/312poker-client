@@ -4,9 +4,11 @@ public class DeckAscii {
 	static final char DIAMONDS = '♦';
 	static final char CLUBS = '♣';
 
+
 	public static void main(String[] args) { 
 		int[] value = {11, 5, 3, 7, 14};
 		String[] color = {"Hearts", "Hearts", "Hearts", "Diamonds", "Diamonds"};
+
 
 
 		printHand(value, color);
@@ -83,17 +85,21 @@ public class DeckAscii {
 			}
 		}
 
+
 		if (value.length > 2 && color.length > 2) {
 
 			System.out.println("Table:");
 
 			// Top of card
+
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
+
 			// Middle of card
+
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -111,6 +117,7 @@ public class DeckAscii {
 			System.out.println("│ · ·" + rank[rank.length - 1] + " " + suit[suit.length - 1] + "│");
 
 			// Bottom of card
+
 			for (int i = 2; i < rank.length; i++) {
 				System.out.print("└─────");
 			}
@@ -119,12 +126,14 @@ public class DeckAscii {
 			System.out.println("Hand:");
 
 			// Top of card
+
 			for (int i = 0; i < 2; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
 			// Middle of card
+
 			for (int i = 0; i < 2; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -142,6 +151,7 @@ public class DeckAscii {
 			System.out.println("│ · ·" + rank[2 - 1] + " " + suit[2 - 1] + "│");
 
 			// Bottom of card
+
 			for (int i = 0; i < 2; i++) {
 				System.out.print("└─────");
 			}
@@ -152,12 +162,14 @@ public class DeckAscii {
 			System.out.println("Hand:");
 
 			// Top of card
+
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("┌─────");
 			}
 			System.out.println("───┐");
 
 			// Middle of card
+
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("│" + rank[i] + " " + suit[i] + " ");
 			}
@@ -175,6 +187,7 @@ public class DeckAscii {
 			System.out.println("│ · ·" + rank[rank.length - 1] + " " + suit[suit.length - 1] + "│");
 
 			// Bottom of card
+
 			for (int i = 0; i < rank.length; i++) {
 				System.out.print("└─────");
 			}
