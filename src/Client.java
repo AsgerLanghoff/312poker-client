@@ -9,10 +9,14 @@ public class Client {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		boolean chat = true;
 
 		try {
-			Socket socket = new Socket("localhost", 6969);
+			System.out.println("Type the IP or name of the server, if on the same machine type: localhost ");
+			String ip = scan.nextLine();
+			System.out.println("Type the port of the server, the default should be 8000 ");
+			int port = Integer.parseInt(scan.nextLine());
+			
+			Socket socket = new Socket(ip, port);
 
 			DataOutputStream output = new DataOutputStream(socket.getOutputStream());
 			DataInputStream input = new DataInputStream(socket.getInputStream());
@@ -23,6 +27,9 @@ public class Client {
 			output.writeUTF(scan.nextLine());
 			output.flush();
 
+			
+			System.out.println("You can use commands 'ready' to initiate your game(warning: you can't chat anymore) or command 'quit' to leave the lobby");
+			
 			Thread write = new Thread(() -> {
 				boolean connect = true;
 				while (connect) {
