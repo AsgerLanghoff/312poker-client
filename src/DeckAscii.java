@@ -1,8 +1,8 @@
 public class DeckAscii {
-	static final char SPADES = '♠';
-	static final char HEARTS = '♥';
-	static final char DIAMONDS = '♦';
-	static final char CLUBS = '♣';
+	static final char SPADES = 'S';
+	static final char HEARTS = 'H';
+	static final char DIAMONDS = 'D';
+	static final char CLUBS = 'C';
 
 
 	public static void main(String[] args) { 
