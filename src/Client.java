@@ -72,8 +72,9 @@ public class Client {
 					}
 				}
 
+				boolean game = true;
+				while(game) {
 				boolean actingTurn = false;
-//				DeckAscii cardPrinter = new DeckAscii();
 				int playersSize = 0;
 				ArrayList<Card> userHand = new ArrayList<>();
 				try {
@@ -162,9 +163,10 @@ public class Client {
 							if (actingTurn) {
 								System.out.println(input.readUTF());
 
+								boolean correctCommand=false;
+								do {
 								String command = scan.nextLine();
 
-								System.out.println(command);
 								output.writeUTF(command);
 								output.flush();
 								if (command.equalsIgnoreCase("raise")) {
@@ -172,6 +174,12 @@ public class Client {
 									output.writeInt(scan.nextInt());
 								}
 								System.out.println(input.readUTF());
+								if(command.equalsIgnoreCase("raise")
+										||command.equalsIgnoreCase("call")
+										||command.equalsIgnoreCase("check")
+										||command.equalsIgnoreCase("fold"))
+									correctCommand=true;
+								}while(!correctCommand);
 							} else {
 								System.out.println(input.readUTF());
 								System.out.println(input.readUTF());
@@ -182,12 +190,37 @@ public class Client {
 						}
 					}
 				}
-//				scan1.close();
+				//here should the end of game be resulted
+				try {
+					System.out.println(input.readUTF());
+					//deciding to end game
+					System.out.println(input.readUTF());
+					
+					for (int i = 0; i < playersSize; i++) {
+						String temp = input.readUTF();
+						System.out.println(temp);
+						if(temp.equals("Type READY to continue or anything else to quit")) {
+							String ready = scan.nextLine();
+							output.writeUTF(ready);
+							output.flush();
+						}
+						game = input.readBoolean();
+						if(game == false) {
+							break;
+						}
+						
+					}
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+				scan.close();
 
 			});
 			read.start();
 
-			System.out.println("test for structure");
 
 		} catch (
 
