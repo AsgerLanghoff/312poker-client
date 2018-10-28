@@ -4,8 +4,7 @@ The Server side of this Poker Texas hold'em game, consists of various classes th
 
 To start a game a server is required to be running, when a server is running it is possible for clients to join the lobby and from there join the game with the command 'ready'. When ready has been entered by all clients, a poker session will start.
 
-The server side is developed by Jons Valvik (jvalvik), Mikkel Rosholm (dumleman + MikkelAAU) and Theo Khumsan (TheoAAU)
-
+The client side is developed by Mathias Adrian Wagner Kristiansen (Mathiasawk) and Rastislav Cech (Rast03)
 Find the adjoining client here: https://github.com/MikkelAAU/312poker-client
 
                                          Step-by-Step guide for cmd-setup
